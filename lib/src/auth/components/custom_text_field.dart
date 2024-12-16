@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:greengrocer/src/config/custom_colors.dart';
 
 class CustomTextField extends StatefulWidget {
   final IconData icon;
@@ -30,6 +31,15 @@ class _CustomTextFieldState extends State<CustomTextField> {
     return TextFormField(
       obscureText: isObscureText,
       decoration: InputDecoration(
+        floatingLabelStyle: TextStyle(
+          color: CustomColors.customSwatchColor,
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(18),
+          borderSide: BorderSide(
+            color: CustomColors.customSwatchColor,
+          ),
+        ),
         prefixIcon: Icon(widget.icon),
         suffixIcon: widget.isSecret
             ? IconButton(
